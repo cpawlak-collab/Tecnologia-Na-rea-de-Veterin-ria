@@ -4,125 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnologia na Área de Veterinária</title>
-    <style>
-        :root {
-            --primary: #0f172a;
-            --secondary: #0ea5e9;
-            --accent: #10b981;
-            --bg: #f8fafc;
-            --text: #334155;
-            --card-bg: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-            border-bottom: 4px solid var(--secondary);
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        main {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            border-top: 4px solid var(--secondary);
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-            font-size: 1.3rem;
-        }
-
-        .card p {
-            font-size: 0.95rem;
-        }
-
-        .tech-stack {
-            background: var(--primary);
-            color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-top: 3rem;
-            text-align: center;
-        }
-
-        .tech-stack h2 {
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-
-        .tags {
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        .tag {
-            background: rgba(14, 165, 233, 0.2);
-            color: var(--secondary);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            font-size: 0.9rem;
-            color: #64748b;
-            border-top: 1px solid #e2e8f0;
-        }
-    </style>
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -154,11 +37,36 @@
             </div>
         </section>
 
+        <!-- Nova seção interativa gerenciada pelo script.js -->
+        <section class="triage-section">
+            <h2>Simulador de Triagem Inteligente</h2>
+            <p>Selecione o sintoma principal do paciente para calcular a prioridade de atendimento.</p>
+            
+            <div class="form-group">
+                <label for="sintoma">Sintoma do Animal:</label>
+                <select id="sintoma">
+                    <option value="">-- Selecione uma opção --</option>
+                    <option value="consulta">Consulta de rotina / Vacinação</option>
+                    <option value="vomito">Vômito ou diarreia leve</option>
+                    <option value="coceira">Coceira intensa ou problemas de pele</option>
+                    <option value="engasgo">Engasgo ou dificuldade respiratória</option>
+                    <option value="trauma">Trauma severo (atropelamento/queda)</option>
+                </select>
+                <button id="btn-triagem">Calcular Prioridade</button>
+            </div>
+
+            <div id="resultado-triagem" class="result-box hidden">
+                <p>Prioridade: <strong id="grau-prioridade"></strong></p>
+                <p id="mensagem-triagem"></p>
+            </div>
+        </section>
+
         <section class="tech-stack">
             <h2>Tecnologias do Projeto</h2>
             <p>Este ecossistema utiliza ferramentas modernas para garantir performance e segurança.</p>
             <div class="tags">
-                <span class="tag">HTML5 / CSS3</span>
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
                 <span class="tag">JavaScript</span>
                 <span class="tag">Health-Tech</span>
                 <span class="tag">Vet-Tech</span>
@@ -170,5 +78,7 @@
         <p>&copy; 2026 - Repositório Vet-Tech. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- Link para o arquivo JavaScript externo -->
+    <script src="script.js"></script>
 </body>
-</
+</html>
